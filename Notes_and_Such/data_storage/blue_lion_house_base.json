@@ -1,0 +1,59 @@
+[
+	{
+		"first_name": "Dimitri",
+		"last_name": "Blaiddyd",
+		"class": "Noble",
+		"abilities": "Royal Lineage",
+		"stats": [28, 12, 4, 7, 7, 5, 7, 4, 9]
+	},
+	{
+		"first_name": "Dedue",
+		"last_name": "Molinaro",
+		"class": "Commoner",
+		"abilities": "Staunch Shield",
+		"stats": [30, 12, 2, 5, 7, 5, 8, 1, 4]
+	},
+	{
+		"first_name": "Felix",
+		"last_name": "Fraldarius",
+		"class": "Noble",
+		"abilities": "Lone Wolf",
+		"stats": [26, 10, 5, 6, 9, 5, 5, 3, 5]
+	},
+	{
+		"first_name": "Mercedes",
+		"last_name": "Martritz",
+		"class": "Commoner",
+		"abilities": "Live to Serve",
+		"stats": [25, 6,10, 6, 8, 5, 5, 9, 8]
+	},
+	{
+		"first_name": "Ashe",
+		"last_name": "Ubert",
+		"class": "Commoner",
+		"abilities": "Lockpick",
+		"stats": [23, 8, 5, 8, 9, 6, 5, 6, 5]
+	},
+	{
+		"first_name": "Annette",
+		"last_name": "Dominic",
+		"class": "Noble",
+		"abilities": "Perseverance",
+		"stats": [23, 6, 11, 7, 7, 6, 5, 4, 6]
+	},
+	{
+		"first_name": "Sylvain",
+		"last_name": "Gautier",
+		"class": "Noble",
+		"abilities": "Philanderer",
+		"stats": [27, 9, 5, 5, 8, 6, 6, 2, 7]
+	},
+	{
+		"first_name": "Ingrid",
+		"last_name": "Galatea",
+		"class": "Noble",
+		"abilities": "Lady Knight",
+		"stats": [27, 8, 6, 6, 8, 6, 6, 8, 8]
+	}
+
+]

@@ -1,0 +1,59 @@
+[
+	{
+		"first_name": "Edelgard",
+		"last_name": "Hresvelg",
+		"class": "Noble",
+		"abilities": "Imperial Lineage",
+		"stats": [29, 13, 6, 6, 8, 5, 6, 4, 10]
+	},
+	{
+		"first_name": "Hubert",
+		"last_name": "Vestra",
+		"class": "Noble",
+		"abilities": "Officer Duty",
+		"stats": [22, 6, 12, 6, 7, 6, 4, 7, 6]
+	},
+	{
+		"first_name": "Dorothea",
+		"last_name": "Arnault",
+		"class": "Commoner",
+		"abilities": "Songstress",
+		"stats": [24, 5, 11, 6, 7, 6, 4, 7, 8]
+	},
+	{
+		"first_name": "Ferdinand",
+		"last_name": "Aegir",
+		"class": "Noble",
+		"abilities": "Confidence",
+		"stats": [28, 8, 5, 6, 8, 6, 6, 2, 7]
+	},
+	{
+		"first_name": "Bernadetta",
+		"last_name": "Varley",
+		"class": "Noble",
+		"abilities": "Persecution Complex",
+		"stats": [25, 8, 5, 7, 7, 5, 4, 2, 6]
+	},
+	{
+		"first_name": "Caspar",
+		"last_name": "Bergliez",
+		"class": "Noble",
+		"abilities": "Born Fighter",
+		"stats": [26, 9, 3, 5, 6, 8, 6, 4, 4]
+	},
+	{
+		"first_name": "Petra",
+		"last_name": "Macneary",
+		"class": "Commoner",
+		"abilities": "Hunter's Boon",
+		"stats": [25, 9, 3, 7, 10, 7, 5, 2, 6]
+	},
+	{
+		"first_name": "Linhardt",
+		"last_name": "Hevring",
+		"class": "Noble",
+		"abilities": "Catnap",
+		"stats": [24, 5, 10, 6, 5, 7, 5, 9, 9]
+	}
+
+]

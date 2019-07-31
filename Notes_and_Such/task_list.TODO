@@ -1,0 +1,22 @@
+Fire Emblem Three Houses Helper:
+
+ ☐ Get team selection out of the way
+   ☐ Allow selection of team
+   ☐ Selection of team should grant default roster
+ ✔ Generate default roster @done (19-07-30 20:20)
+   ✔ Create default roster data @done (19-07-29 22:06)
+ ☐ Create default roster addition for MC
+ ☐ Allow updating of roster
+   ☐ Allow leveling of roster members
+   ☐ Allow class representation/re-classing
+   ☐ Allow members to be added, deleted (RIP Classic runs)
+ ☐ Allow export of members in useful formats
+   ☐ JSON
+   ☐ CSV
+   ☐ XLSX (If I'm feeling fancy)
+ ☐ Allow importing of data to skip unneccessary configuration each time
+   ☐ Grid should expand to fit total number of team members
+ ☐ Allow imports of multiple data types
+   ☐ JSON
+   ☐ CSV
+   ☐ XLSX (Also not necessary)

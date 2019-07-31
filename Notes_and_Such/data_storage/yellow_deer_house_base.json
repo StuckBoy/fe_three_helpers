@@ -1,0 +1,59 @@
+[
+	{
+		"first_name": "Claude",
+		"last_name": "Reigen",
+		"class": "Noble",
+		"abilities": "Leicester Lineage",
+		"stats": [26, 11, 5, 8, 8, 7, 6, 4, 8]
+	},
+	{
+		"first_name": "Hilda",
+		"last_name": "Goneril",
+		"class": "Noble",
+		"abilities": "Advocate",
+		"stats": [29, 10, 5, 5, 8, 6, 6, 3, 7]
+	},
+	{
+		"first_name": "Lorenz",
+		"last_name": "Glouster",
+		"class": "Noble",
+		"abilities": "Distinguished House",
+		"stats": [28, 8, 7, 6, 7, 5, 6, 6, 3]
+	},
+	{
+		"first_name": "Raphael",
+		"last_name": "Kirsten",
+		"class": "Commoner",
+		"abilities": "Goody Basket",
+		"stats": [30, 11, 3, 5, 6, 6, 7, 1, 4]
+	},
+	{
+		"first_name": "Lysithea",
+		"last_name": "Ordelia",
+		"class": "Noble",
+		"abilities": "Mastermind",
+		"stats": [22, 4, 11, 7, 7, 5, 3, 4, 5]
+	},
+	{
+		"first_name": "Ignatz",
+		"last_name": "Victor",
+		"class": "Commoner",
+		"abilities": "Watchful Eye",
+		"stats": [25, 8, 5, 7, 8, 8, 4, 6, 4]
+	},
+	{
+		"first_name": "Marianne",
+		"last_name": "Edmund",
+		"class": "Noble",
+		"abilities": "Animal Friend",
+		"stats": [23, 5, 11, 6, 7, 6, 4, 8, 7]
+	},
+	{
+		"first_name": "Leonie",
+		"last_name": "Pinelli",
+		"class": "Commoner",
+		"abilities": "Rivalry",
+		"stats": [26, 9, 5, 8, 9, 6, 7, 2, 7]
+	}
+
+]
