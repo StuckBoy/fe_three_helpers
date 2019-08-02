@@ -1,7 +1,8 @@
 import json
 
+from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QIcon
-from PyQt5.QtWidgets import QTableWidget, QTableWidgetItem, QPushButton
+from PyQt5.QtWidgets import QTableWidget, QTableWidgetItem, QPushButton, QDialog, QLabel
 from PyQt5.uic.properties import QtGui
 from win32api import GetSystemMetrics
 
@@ -69,14 +70,52 @@ class FETable(QTableWidget):
 
     def addActionColumns(self):
         self.setColumnCount(self.columnCount() + 3)
+        killButtons = []
         for number in range(0, 10):
             levelButton = QPushButton("+1")
             reClassButton = QPushButton("Respec")
-            killButton = QPushButton("Ripperoni")
+            killButtons.append(QPushButton("Ripperoni"))
+
+            levelButton.clicked.connect(self.triggerLevelUp)
+            reClassButton.clicked.connect(self.triggerReClass)
+            killButtons[number].clicked.connect(lambda: self.triggerKill(killButtons[number]))
+
             self.setCellWidget(number, 12, levelButton)
             self.setCellWidget(number, 13, reClassButton)
-            self.setCellWidget(number, 14, killButton)
+            self.setCellWidget(number, 14, killButtons[number])
 
+    def triggerLevelUp(self):
+        # Show level up window, fill in with details later
+        print("Triggered Level up")
+
+    def triggerReClass(self):
+        # Show ReClass window, refresh with new data once closed
+        print("Triggered ReClass")
+
+    def triggerKill(self, killButton):
+        killDialog = QDialog()
+        killDialog.setWindowTitle("Retire Student Confirmation")
+        killDialog.setWhatsThis("This modal allows you to confirm that you lost a student while on a field trip.")
+        killDialog.setGeometry(GetSystemMetrics(0) / 2.3, GetSystemMetrics(1) / 2.3, 400, 200)
+
+        dialogText = QLabel("Are you sure you want to permanently retire this person?", killDialog)
+        dialogText.move(70, 70)
+
+        buttonConfirm = QPushButton("Confirm", killDialog)
+        buttonCancel = QPushButton("Cancel", killDialog)
+
+        buttonConfirm.clicked.connect(killDialog.accept)
+        buttonCancel.clicked.connect(killDialog.reject)
+
+        buttonConfirm.move(220, 120)
+        buttonCancel.move(130, 120)
+
+        killDialog.setWindowModality(Qt.ApplicationModal)
+        killDialog.exec_()
+        if killDialog.accepted:
+            print("Dialog accepted, removing person in row " + str(self.currentRow()))
+            self.removeRow(int(self.currentRow()))
+            self.viewport().update()
 
     def show(self):
         super().show()

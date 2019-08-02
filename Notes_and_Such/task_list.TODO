@@ -9,7 +9,8 @@ Fire Emblem Three Houses Helper:
  ☐ Allow updating of roster
    ☐ Allow leveling of roster members
    ☐ Allow class representation/re-classing
-   ☐ Allow members to be added, deleted (RIP Classic runs)
+   ☐ Allow members to be added
+   ✔ Allow members to be deleted (RIP Classic runs) @done (19-08-01 21:54)
  ☐ Allow export of members in useful formats
    ☐ JSON
    ☐ CSV
