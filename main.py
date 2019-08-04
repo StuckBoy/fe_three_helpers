@@ -1,7 +1,7 @@
 import sys
 
 from table_window import FETable
-from PyQt5.QtCore import Qt
+from PyQt5.QtCore import Qt, QRect
 from win32api import GetSystemMetrics
 from PyQt5.QtWidgets import QApplication, QMainWindow, QAction, QGroupBox, QHBoxLayout, QPushButton, QVBoxLayout, \
     QLabel, QWidget
@@ -121,6 +121,8 @@ class App(QMainWindow):
         tableLayout.addWidget(classRoster)
         self.setCentralWidget(classRoster)
         self.resize(classRoster.width(), classRoster.height())
+        self.updateGeometry()
+
 
 
 # Rework this in a more OOP Style

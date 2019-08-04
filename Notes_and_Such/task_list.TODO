@@ -1,15 +1,16 @@
 Fire Emblem Three Houses Helper:
 
- ☐ Get team selection out of the way
-   ☐ Allow selection of team
-   ☐ Selection of team should grant default roster
+ ✔ Get team selection out of the way @done (19-07-30 20:28)
+   ✔ Allow selection of team @done (19-07-30 20:28)
+   ✔ Selection of team should grant default roster @done (19-07-30 20:28)
  ✔ Generate default roster @done (19-07-30 20:20)
    ✔ Create default roster data @done (19-07-29 22:06)
- ☐ Create default roster addition for MC
+ ✔ Create default roster addition for MC @done (19-08-01 19:27)
  ☐ Allow updating of roster
-   ☐ Allow leveling of roster members
-   ☐ Allow class representation/re-classing
-   ☐ Allow members to be added, deleted (RIP Classic runs)
+   ✔ Allow leveling of roster members @done (19-08-04 00:46)
+   ✔ Allow class representation/re-classing @done (19-08-04 10:01)
+   ☐ Allow members to be added
+   ✔ Allow members to be deleted (RIP Classic runs) @done (19-08-01 21:54)
  ☐ Allow export of members in useful formats
    ☐ JSON
    ☐ CSV
