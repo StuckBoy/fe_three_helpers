@@ -1,9 +1,10 @@
 import json
+from functools import partial
 
-from PyQt5.QtCore import Qt
+from PyQt5.QtCore import Qt, QPoint, QSignalMapper
 from PyQt5.QtGui import QIcon
-from PyQt5.QtWidgets import QTableWidget, QTableWidgetItem, QPushButton, QDialog, QLabel
-from PyQt5.uic.properties import QtGui
+from PyQt5.QtWidgets import QTableWidget, QTableWidgetItem, QPushButton, QDialog, QLabel, QLineEdit
+from PyQt5.uic.properties import QtGui, QtCore
 from win32api import GetSystemMetrics
 
 
@@ -70,29 +71,97 @@ class FETable(QTableWidget):
 
     def addActionColumns(self):
         self.setColumnCount(self.columnCount() + 3)
+        levelButtons = []
         killButtons = []
         for number in range(0, 10):
-            levelButton = QPushButton("+1")
+            levelButtons.append(QPushButton("+1"))
             reClassButton = QPushButton("Respec")
             killButtons.append(QPushButton("Ripperoni"))
 
-            levelButton.clicked.connect(self.triggerLevelUp)
+            levelButtons[number].clicked.connect(lambda: self.triggerLevelUp())
             reClassButton.clicked.connect(self.triggerReClass)
-            killButtons[number].clicked.connect(lambda: self.triggerKill(killButtons[number]))
+            killButtons[number].clicked.connect(lambda: self.triggerKill())
 
-            self.setCellWidget(number, 12, levelButton)
+            self.setCellWidget(number, 12, levelButtons[number])
             self.setCellWidget(number, 13, reClassButton)
             self.setCellWidget(number, 14, killButtons[number])
 
     def triggerLevelUp(self):
-        # Show level up window, fill in with details later
-        print("Triggered Level up")
+        # Generate layout stuff
+        levelUpDialog = QDialog()
+        levelUpDialog.setWindowTitle("Level Up Student")
+        levelUpDialog.setWhatsThis("This modal allows you to level up a particular unit.")
+        levelUpDialog.setGeometry(GetSystemMetrics(0) / 2.3, GetSystemMetrics(1) / 2.3, 400, 400)
+
+        dialogText = QLabel("Please increment the stats that the character gained.", levelUpDialog)
+        dialogText.move(10, 10)
+
+        buttonConfirm = QPushButton("Confirm", levelUpDialog)
+        buttonCancel = QPushButton("Cancel", levelUpDialog)
+
+        buttonConfirm.clicked.connect(levelUpDialog.accept)
+        buttonCancel.clicked.connect(levelUpDialog.reject)
+
+        buttonConfirm.move(levelUpDialog.width() - 90, levelUpDialog.height() - 40)
+        buttonCancel.move(levelUpDialog.width() - 180, levelUpDialog.height() - 40)
+
+        # Add current stat stuff
+        heightOffset = 0
+        statList = ['HP', 'Str', 'Mag', 'Dex', 'Spd', 'Lck', 'Def', 'Res', 'Charm']
+        currentColumn = 3
+
+        statLabels = []
+        statFields = []
+        incrementButtons = []
+        decrementButtons = []
+
+        for x in range(9):
+            statLabels.append(QLabel(statList[x], levelUpDialog))
+            statLabels[x].move(30, 50 + heightOffset)
+
+            statFields.append(QLineEdit(levelUpDialog))
+            statFields[x].setReadOnly(True)
+            statFields[x].setText(self.item(self.currentRow(), currentColumn).text())
+            currentColumn += 1
+            statFields[x].setGeometry(70, 45 + heightOffset, 30, 25)
+
+            incrementButtons.append(QPushButton("+", levelUpDialog))
+            decrementButtons.append(QPushButton("-", levelUpDialog))
+
+            incrementButtons[x].setGeometry(130, 47 + heightOffset, 20, 20)
+            decrementButtons[x].setGeometry(110, 47 + heightOffset, 20, 20)
+
+            heightOffset += 35
+
+            # incrementButtons[x].clicked.connect(lambda val=x: self.incrementStat(statFields[val]))
+            # decrementButtons[x].clicked.connect(lambda val=x: self.decrementStat(statFields[val]))
+
+            incrementButtons[x].clicked.connect(partial(self.incrementStat, statFields[x]))
+            decrementButtons[x].clicked.connect(partial(self.decrementStat, statFields[x]))
+
+        levelUpDialog.setWindowModality(Qt.ApplicationModal)
+        levelUpDialog.exec_()
+        if levelUpDialog.result():
+            print("Dialog accepted, updating person in row " + str(self.currentRow()))
+            for y in range(9):
+                self.item(self.currentRow(), y + 3).setText(statFields[y].text())
+            self.viewport().update()
+
+    def incrementStat(self, field):
+        currentNumber = int(field.text())
+        currentNumber += 1
+        field.setText(str(currentNumber))
+
+    def decrementStat(self, field):
+        currentNumber = int(field.text())
+        currentNumber -= 1
+        field.setText(str(currentNumber))
 
     def triggerReClass(self):
         # Show ReClass window, refresh with new data once closed
         print("Triggered ReClass")
 
-    def triggerKill(self, killButton):
+    def triggerKill(self):
         killDialog = QDialog()
         killDialog.setWindowTitle("Retire Student Confirmation")
         killDialog.setWhatsThis("This modal allows you to confirm that you lost a student while on a field trip.")
@@ -112,7 +181,7 @@ class FETable(QTableWidget):
 
         killDialog.setWindowModality(Qt.ApplicationModal)
         killDialog.exec_()
-        if killDialog.accepted:
+        if killDialog.result():
             print("Dialog accepted, removing person in row " + str(self.currentRow()))
             self.removeRow(int(self.currentRow()))
             self.viewport().update()
