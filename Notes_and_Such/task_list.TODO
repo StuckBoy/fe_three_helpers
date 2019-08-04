@@ -7,8 +7,8 @@ Fire Emblem Three Houses Helper:
    ✔ Create default roster data @done (19-07-29 22:06)
  ✔ Create default roster addition for MC @done (19-08-01 19:27)
  ☐ Allow updating of roster
-   ☐ Allow leveling of roster members
-   ☐ Allow class representation/re-classing
+   ✔ Allow leveling of roster members @done (19-08-04 00:46)
+   ✔ Allow class representation/re-classing @done (19-08-04 10:01)
    ☐ Allow members to be added
    ✔ Allow members to be deleted (RIP Classic runs) @done (19-08-01 21:54)
  ☐ Allow export of members in useful formats
