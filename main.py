@@ -80,7 +80,7 @@ class App(QMainWindow):
         buttonBlueLions.clicked.connect(self.selectBlueLions)
         buttonLayout.addWidget(buttonBlueLions)
 
-        buttonYellowDeer = self.generateBasicButton('Yellow Deer')
+        buttonYellowDeer = self.generateBasicButton('Golden Deer')
         buttonYellowDeer.clicked.connect(self.selectYellowDeer)
         buttonLayout.addWidget(buttonYellowDeer)
         buttonLayout.setAlignment(Qt.AlignTop)
@@ -98,7 +98,7 @@ class App(QMainWindow):
             stylesheetStr = "background-color: salmon"
         elif caption == 'Blue Lions':
             stylesheetStr = "background-color: lightblue"
-        elif caption == 'Yellow Deer':
+        elif caption == 'Golden Deer':
             stylesheetStr = "background-color: yellow"
         basicButton.setStyleSheet(stylesheetStr)
         basicButton.setFont(buttonFont)
@@ -122,7 +122,6 @@ class App(QMainWindow):
         self.setCentralWidget(classRoster)
         self.resize(classRoster.width(), classRoster.height())
         self.updateGeometry()
-
 
 
 # Rework this in a more OOP Style

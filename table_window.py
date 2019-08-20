@@ -22,10 +22,13 @@ class FETable(QTableWidget):
 
     uniqueClasses = ["Commoner", "Noble", "Dancer"]
     beginnerClasses = ["Myrmidon", "Soldier", "Fighter", "Monk"]
-    intermediateClasses = ["Lord", "Mercenary", "Thief", "Cavalier", "Pegasus Knight", "Brigand", "Armored Knight", "Archer", "Brawler", "Mage", "Dark Mage", "Priest"]
-    advancedClasses = ["Swordmaster", "Hero", "Assassin", "Paladin", "Warrior", "Fortress Knight", "Wyvern Rider", "Sniper", "Grappler", "Warlock", "Dark Bishop", "Bishop"]
+    intermediateClasses = ["Lord", "Mercenary", "Thief", "Cavalier", "Pegasus Knight", "Brigand", "Armored Knight",
+                           "Archer", "Brawler", "Mage", "Dark Mage", "Priest"]
+    advancedClasses = ["Swordmaster", "Hero", "Assassin", "Paladin", "Warrior", "Fortress Knight", "Wyvern Rider",
+                       "Sniper", "Grappler", "Warlock", "Dark Bishop", "Bishop"]
     lordAdvancedClasses = [] # TODO Populate once I'm no longer spoiled
-    masterClasses = ["Mortal Savant", "Falcon Knight", "War Master", "Wyvern Lord", "Great Knight", "Bow Knight", "Gremory", "Dark Knight", "Holy Knight"]
+    masterClasses = ["Mortal Savant", "Falcon Knight", "War Master", "Wyvern Lord", "Great Knight", "Bow Knight",
+                     "Gremory", "Dark Knight", "Holy Knight"]
     lordMasterClasses = [] # TODO Populate once I'm no longer spoiled
     unknownClasses = [] # TODO Populate once I'm no longer spoiled
     classListCollection = [uniqueClasses, beginnerClasses, intermediateClasses, advancedClasses, lordAdvancedClasses, masterClasses, lordMasterClasses, unknownClasses]
@@ -58,7 +61,7 @@ class FETable(QTableWidget):
         elif houseNumber == 1:
             targetHouse = 'blue_lion_house_base.json'
         else:
-            targetHouse = 'yellow_deer_house_base.json'
+            targetHouse = 'golden_deer_house_base.json'
 
         rosterCount = 0
         with open('./Notes_and_Such/data_storage/{}'.format(targetHouse)) as jsonFile:
